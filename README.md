@@ -1,2 +1,4 @@
 # CSAPP-Reading-Notes
-Collect some notes and relevant codes during reading of Computer System: A Programmer's Perspective (CSAPP).
+This repository stores some notes in wiki and some relevant codes to demonstrate the functionality if necessary.
+
+See [wiki](https://github.com/oraoraoraaa/CSAPP-Reading-Notes/wiki) for more details.
