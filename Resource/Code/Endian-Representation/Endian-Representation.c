@@ -21,7 +21,7 @@ void showBytesSigned(char *start, size_t len)
     {
         printf("%.2x ", start[i]);
         /* printf promotes every element smaller than int size to int size. */
-        /* The integer promotion uses signed extension of course, which does a arithmetic left shift. */
+        /* The integer promotion uses signed extension of course, which kind of like doing an arithmetic right shift. */
         /* If passed 0x80 which is 0b10000000, the printf would promote it to 0xffffff80. */
     }
     printf("\nWhy does this happen? \n");
