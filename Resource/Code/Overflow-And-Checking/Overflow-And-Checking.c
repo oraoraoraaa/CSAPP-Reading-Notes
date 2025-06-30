@@ -40,6 +40,17 @@ void overflow_check_signed_negation(int x, int y) {
   }
 }
 
+void overflow_check_mult(int x, int y) {
+  int mult = x * y;
+  if (!x || (mult / x == y)) {
+    /* if x = 0 or mult / x = y, the result is multiplied properly without
+     * overflow. */
+    printf("%d * %d = %d = 0x%x, normal multiplication.\n", x, y, mult, mult);
+  } else {
+    printf("%d * %d = %d = 0x%x, result OVERFLOWED!\n", x, y, mult, mult);
+  }
+}
+
 int main() {
   printf("\n---------------Unsigned Int Addition---------------\n");
   overflow_check_unsigned(0xFFFFFFFE, 0x1);
@@ -56,4 +67,8 @@ int main() {
   overflow_check_signed_negation(-3, 0x80000000);
   overflow_check_signed_negation(0, 0x80000000);
   overflow_check_signed_negation(2, 7);
+
+  printf("\n---------------Int Multiplication---------------\n");
+  overflow_check_mult(0x08000000, 16); /* Shift 4 bits to the left */
+  overflow_check_mult(0x08000000, 8);  /* Shift 3 bits to the left */
 }
