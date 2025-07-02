@@ -1,6 +1,8 @@
 #ifndef SHOWBYTE_H_
 #define SHOWBYTE_H_
 
+#include <stdio.h>
+
 static void showBytes(unsigned char *start, size_t len) //
 /* The char pointer should be unsigned.*/
 {
